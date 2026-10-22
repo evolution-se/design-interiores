@@ -1,63 +1,63 @@
-﻿/* projetos.js â€” dados demonstrativos dos projetos do Atelier Norte.
-   SUBSTITUIR por projetos reais e autorizados do estÃºdio. */
+﻿/* projetos.js — dados demonstrativos dos projetos do Atelier Norte.
+   SUBSTITUIR por projetos reais e autorizados do estúdio. */
 window.PROJETOS = [
   {
     slug: 'residencia-aurora',
-    titulo: 'ResidÃªncia Aurora',
+    titulo: 'Residência Aurora',
     categoria: 'Residencial',
-    cidade: 'SÃ£o Paulo, SP',
+    cidade: 'São Paulo, SP',
     ano: '2024',
-    descricao: 'Casa tÃ©rrea com pÃ¡tio interno, volumes simples e integraÃ§Ã£o com o jardim. Madeira clara, concreto aparente e luz zenital.',
+    descricao: 'Casa térrea com pátio interno, volumes simples e integração com o jardim. Madeira clara, concreto aparente e luz zenital.',
     imagens: ['images/portfolio/residencia-aurora.svg'],
-    escopo: ['Projeto arquitetÃ´nico', 'Projeto executivo', 'Design de interiores', 'Acompanhamento de obra']
+    escopo: ['Projeto arquitetônico', 'Projeto executivo', 'Design de interiores', 'Acompanhamento de obra']
   },
   {
     slug: 'apartamento-meridiano',
     titulo: 'Apartamento Meridiano',
     categoria: 'Interiores',
-    cidade: 'SÃ£o Paulo, SP',
+    cidade: 'São Paulo, SP',
     ano: '2024',
-    descricao: 'Reforma de apartamento com planta integrada, marcenaria contÃ­nua e paleta neutra.',
+    descricao: 'Reforma de apartamento com planta integrada, marcenaria contínua e paleta neutra.',
     imagens: ['images/portfolio/apartamento-meridiano.svg'],
-    escopo: ['Design de interiores', 'Projeto de iluminaÃ§Ã£o', 'Detalhamento de marcenaria']
+    escopo: ['Design de interiores', 'Projeto de iluminação', 'Detalhamento de marcenaria']
   },
   {
     slug: 'casa-patio',
-    titulo: 'Casa PÃ¡tio',
+    titulo: 'Casa Pátio',
     categoria: 'Residencial',
-    cidade: 'SÃ£o Paulo, SP',
+    cidade: 'São Paulo, SP',
     ano: '2023',
-    descricao: 'Casa de dois pavimentos com varanda ampla e iluminaÃ§Ã£o zenital.',
+    descricao: 'Casa de dois pavimentos com varanda ampla e iluminação zenital.',
     imagens: ['images/portfolio/casa-patio.svg'],
-    escopo: ['Projeto arquitetÃ´nico', 'Projeto legal', 'Acompanhamento de obra']
+    escopo: ['Projeto arquitetônico', 'Projeto legal', 'Acompanhamento de obra']
   },
   {
     slug: 'escritorio-linha',
-    titulo: 'EscritÃ³rio Linha',
+    titulo: 'Escritório Linha',
     categoria: 'Comercial',
-    cidade: 'SÃ£o Paulo, SP',
+    cidade: 'São Paulo, SP',
     ano: '2024',
-    descricao: 'EscritÃ³rio corporativo com salas de trabalho flexÃ­veis e materiais acÃºsticos.',
+    descricao: 'Escritório corporativo com salas de trabalho flexíveis e materiais acústicos.',
     imagens: ['images/portfolio/escritorio-linha.svg'],
-    escopo: ['Projeto arquitetÃ´nico comercial', 'Projeto executivo', 'Projeto de iluminaÃ§Ã£o']
+    escopo: ['Projeto arquitetônico comercial', 'Projeto executivo', 'Projeto de iluminação']
   },
   {
     slug: 'cafe-sal-brasa',
-    titulo: 'CafÃ© Sal & Brasa',
+    titulo: 'Café Sal & Brasa',
     categoria: 'Comercial',
-    cidade: 'SÃ£o Paulo, SP',
+    cidade: 'São Paulo, SP',
     ano: '2023',
-    descricao: 'EspaÃ§o gastronÃ´mico com balcÃ£o em pedra e iluminaÃ§Ã£o quente.',
+    descricao: 'Espaço gastronômico com balcão em pedra e iluminação quente.',
     imagens: ['images/portfolio/cafe-sal-brasa.svg'],
-    escopo: ['Projeto arquitetÃ´nico comercial', 'Design de interiores', 'Acompanhamento de obra']
+    escopo: ['Projeto arquitetônico comercial', 'Design de interiores', 'Acompanhamento de obra']
   },
   {
     slug: 'loft-vertigem',
     titulo: 'Loft Vertigem',
     categoria: 'Interiores',
-    cidade: 'SÃ£o Paulo, SP',
+    cidade: 'São Paulo, SP',
     ano: '2024',
-    descricao: 'Loft com pÃ©-direito duplo, concreto aparente e mezanino.',
+    descricao: 'Loft com pé-direito duplo, concreto aparente e mezanino.',
     imagens: ['images/portfolio/loft-vertigem.svg'],
     escopo: ['Design de interiores', 'Projeto estrutural (parceria)', 'Detalhamento']
   },
@@ -65,20 +65,20 @@ window.PROJETOS = [
     slug: 'casa-serra',
     titulo: 'Casa Serra',
     categoria: 'Residencial',
-    cidade: 'SÃ£o Paulo, SP',
+    cidade: 'São Paulo, SP',
     ano: '2023',
-    descricao: 'ResidÃªncia de campo com estrutura em madeira e grandes aberturas.',
+    descricao: 'Residência de campo com estrutura em madeira e grandes aberturas.',
     imagens: ['images/portfolio/casa-serra.svg'],
-    escopo: ['Projeto arquitetÃ´nico', 'Projeto executivo', 'Acompanhamento de obra']
+    escopo: ['Projeto arquitetônico', 'Projeto executivo', 'Acompanhamento de obra']
   },
   {
     slug: 'clinica-praca',
-    titulo: 'ClÃ­nica PraÃ§a',
+    titulo: 'Clínica Praça',
     categoria: 'Comercial',
-    cidade: 'SÃ£o Paulo, SP',
+    cidade: 'São Paulo, SP',
     ano: '2024',
-    descricao: 'ConsultÃ³rio com recepÃ§Ã£o acolhedora e circulaÃ§Ã£o clara.',
+    descricao: 'Consultório com recepção acolhedora e circulação clara.',
     imagens: ['images/portfolio/clinica-praca.svg'],
-    escopo: ['Projeto arquitetÃ´nico comercial', 'Design de interiores', 'Projeto de iluminaÃ§Ã£o']
+    escopo: ['Projeto arquitetônico comercial', 'Design de interiores', 'Projeto de iluminação']
   }
 ];

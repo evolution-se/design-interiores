@@ -1,9 +1,9 @@
 ﻿/* ============================================================
-   Atelier Norte â€” style.css
-   Galeria silenciosa: editorial, neutro, espaÃ§o negativo.
+   Atelier Norte — style.css
+   Galeria silenciosa: editorial, neutro, espaço negativo.
    ============================================================ */
 
-/* ---------- 1. VariÃ¡veis ---------- */
+/* ---------- 1. Variáveis ---------- */
 :root {
   --color-primary:        #111111;
   --color-primary-soft:   #1E1E1E;
@@ -169,7 +169,7 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
   .grid-3 { grid-template-columns: 1fr; gap: 1.5rem; }
 }
 
-/* ---------- 5. BotÃµes ---------- */
+/* ---------- 5. Botões ---------- */
 .btn-brand, .btn-outline-brand {
   display: inline-flex;
   align-items: center;
@@ -447,7 +447,7 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
   .hero-actions .btn-brand, .hero-actions .btn-outline-brand { width: 100%; }
   .hero-scroll { display: none; }
 }
-/* ---------- 8. EstÃºdio ---------- */
+/* ---------- 8. Estúdio ---------- */
 .studio-grid {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
@@ -494,7 +494,7 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
   .studio-img-secondary { position: static; width: 60%; margin-top: 1.5rem; border: none; }
   .studio-pillars { flex-direction: column; gap: 1.5rem; }
 }
-/* ---------- 9. PortfÃ³lio ---------- */
+/* ---------- 9. Portfólio ---------- */
 .portfolio-filters {
   display: flex;
   gap: 1.5rem;
@@ -598,7 +598,7 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
   .portfolio-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .portfolio-card, .portfolio-card--wide, .portfolio-card--tall, .portfolio-card--full { grid-column: span 1; }
 }
-/* ---------- 10. ServiÃ§os ---------- */
+/* ---------- 10. Serviços ---------- */
 .service-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
 .service-item {
   padding: 2.5rem 2rem 2.5rem 0;
@@ -775,7 +775,7 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
   transition: transform .3s var(--ease-soft);
 }
 .faq-accordion .accordion-button:not(.collapsed)::after {
-  content: 'âˆ’';
+  content: '−';
   transform: rotate(0);
 }
 .faq-accordion .accordion-button:focus { box-shadow: none; }
@@ -871,7 +871,7 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
   transition: transform .3s var(--ease-soft);
 }
 .faq-accordion .accordion-button:not(.collapsed)::after {
-  content: 'âˆ’';
+  content: '−';
 }
 .faq-accordion .accordion-button:focus { box-shadow: none; }
 .faq-accordion .accordion-body {
@@ -983,7 +983,7 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
 }
 
-/* ---------- 18. RodapÃ© ---------- */
+/* ---------- 18. Rodapé ---------- */
 .site-footer {
   background: var(--color-primary);
   color: var(--color-text-light);
@@ -1071,7 +1071,7 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
 .img-fade { opacity: 0; transition: opacity .6s var(--ease-soft); }
 .img-fade.is-loaded { opacity: 1; }
 
-/* ---------- 21. AnimaÃ§Ãµes reveal ---------- */
+/* ---------- 21. Animações reveal ---------- */
 .reveal { transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out); }
 .reveal.is-visible { opacity: 1 !important; transform: none !important; }
 .reveal-delay-1 { transition-delay: 100ms; }
@@ -1079,7 +1079,7 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
 .reveal-delay-3 { transition-delay: 300ms; }
 .reveal-delay-4 { transition-delay: 400ms; }
 
-/* ---------- 22. BotÃ£o flutuante ---------- */
+/* ---------- 22. Botão flutuante ---------- */
 .fab-whatsapp {
   position: fixed;
   right: 20px;

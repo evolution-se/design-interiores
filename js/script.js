@@ -1,8 +1,8 @@
-﻿/* script.js â€” comportamentos globais do site Atelier Norte */
+﻿/* script.js — comportamentos globais do site Atelier Norte */
 (function () {
   'use strict';
 
-  const WHATSAPP_NUMBER = "5511900000000"; // SUBSTITUIR pelo nÃºmero real
+  const WHATSAPP_NUMBER = "5511900000000"; // SUBSTITUIR pelo número real
 
   function buildWhatsAppUrl(message) {
     return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
@@ -34,7 +34,7 @@
         else header.classList.remove('is-transparent');
       }
     }
-    // pÃ¡ginas internas: header sÃ³lido
+    // páginas internas: header sólido
     if (document.body.classList.contains('page-inner')) {
       if (header) header.classList.remove('is-transparent');
     } else {
@@ -62,7 +62,7 @@
 
     applyWhatsAppLinks();
 
-    // ---------- Scroll suave para Ã¢ncoras ----------
+    // ---------- Scroll suave para âncoras ----------
     document.querySelectorAll('a[href^="#"]').forEach(function (a) {
       a.addEventListener('click', function (e) {
         var id = a.getAttribute('href');
@@ -167,7 +167,7 @@
   });
 })();
 
-/* ---- FormulÃ¡rio de contato ---- */
+/* ---- Formulário de contato ---- */
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
     var form = document.getElementById('contactForm');
@@ -196,7 +196,7 @@
       if (!nome) errors.push('Informe seu nome.');
       if (!tel) errors.push('Informe seu telefone.');
       if (!tipo) errors.push('Selecione o tipo de projeto.');
-      if (consent && !consent.checked) errors.push('Ã‰ necessÃ¡rio concordar com a polÃ­tica de privacidade.');
+      if (consent && !consent.checked) errors.push('É necessário concordar com a política de privacidade.');
       if (errorBox) {
         errorBox.innerHTML = errors.map(function (x) { return '<p>' + x + '</p>'; }).join('');
         errorBox.setAttribute('aria-live', 'polite');
@@ -205,11 +205,11 @@
         f.setAttribute('aria-invalid', errors.length ? 'true' : 'false');
       });
       if (errors.length) return;
-      var text = 'OlÃ¡! Meu nome Ã© ' + nome + '.\n' +
+      var text = 'Olá! Meu nome é ' + nome + '.\n' +
         'Tipo de projeto: ' + tipo + '.\n' +
         'Telefone: ' + tel + '.\n' +
-        (loc ? 'LocalizaÃ§Ã£o do imÃ³vel: ' + loc + '.\n' : '') +
-        (estagio ? 'EstÃ¡gio: ' + estagio + '.\n' : '') +
+        (loc ? 'Localização do imóvel: ' + loc + '.\n' : '') +
+        (estagio ? 'Estágio: ' + estagio + '.\n' : '') +
         (msg ? 'Mensagem: ' + msg : '');
       window.open(window.buildWhatsAppUrl(text), '_blank', 'noopener,noreferrer');
     });
