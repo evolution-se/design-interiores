@@ -732,8 +732,6 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
   margin: 0 auto;
 }
 .testimonial-card-example {
-  max-width: 560px;
-  margin: 2rem auto 0;
   padding: 2rem;
   background: var(--color-surface);
   border-left: 2px solid var(--color-accent);
@@ -799,101 +797,6 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
 .faq-accordion .accordion-collapse { display: none; }
 .faq-accordion .accordion-collapse.show,
 .faq-accordion .accordion-collapse.collapsing { display: block; }
-/* ---------- 13. Equipe ---------- */
-.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
-.team-portrait {
-  aspect-ratio: 4/5;
-  overflow: hidden;
-  background: var(--color-surface);
-  margin-bottom: 1.25rem;
-  filter: grayscale(.35);
-}
-.team-portrait img { width: 100%; height: 100%; object-fit: cover; }
-.team-name { font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: .25rem; }
-.team-role { font-size: .8rem; color: var(--color-accent-dark); letter-spacing: .08em; text-transform: uppercase; margin-bottom: .75rem; }
-.team-bio { font-size: .9rem; color: var(--color-muted); line-height: 1.6; margin-bottom: .75rem; }
-.team-reg { font-size: .78rem; color: var(--color-muted); }
-@media (max-width: 991.98px) {
-  .team-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 575.98px) {
-  .team-grid { grid-template-columns: 1fr; }
-}
-
-/* ---------- 14. Depoimentos reservados ---------- */
-.testimonial-placeholder {
-  border: 1px dashed var(--color-border);
-  padding: 3rem 2rem;
-  text-align: center;
-  color: var(--color-muted);
-  font-size: .9rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.testimonial-card-example {
-  max-width: 560px;
-  margin: 2rem auto 0;
-  padding: 2rem;
-  background: var(--color-surface);
-  border-left: 2px solid var(--color-accent);
-}
-.testimonial-card-example .quote {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  font-style: italic;
-  color: var(--color-primary);
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
-.testimonial-card-example .attribution {
-  font-size: .72rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-}
-
-/* ---------- 15. FAQ ---------- */
-.faq-accordion .accordion-item {
-  border: none;
-  border-bottom: 1px solid var(--color-border);
-  background: transparent;
-  border-radius: 0;
-}
-.faq-accordion .accordion-button {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--color-primary);
-  background: transparent;
-  padding: 1.5rem 0;
-  box-shadow: none;
-  gap: 1rem;
-}
-.faq-accordion .accordion-button::after {
-  background-image: none;
-  content: '+';
-  font-family: var(--font-sans);
-  font-size: 1.4rem;
-  font-weight: 300;
-  color: var(--color-accent-dark);
-  margin-left: auto;
-  transition: transform .3s var(--ease-soft);
-}
-.faq-accordion .accordion-button:not(.collapsed)::after {
-  content: '−';
-}
-.faq-accordion .accordion-button:focus { box-shadow: none; }
-.faq-accordion .accordion-body {
-  padding: 0 0 1.5rem;
-  font-size: .95rem;
-  color: var(--color-muted);
-  line-height: 1.7;
-  max-width: 70ch;
-}
-.section--dark .faq-accordion .accordion-item { border-bottom-color: var(--color-border-dark); }
-.section--dark .faq-accordion .accordion-button { color: var(--color-text-light); }
-.section--dark .faq-accordion .accordion-button::after { color: var(--color-accent); }
-.section--dark .faq-accordion .accordion-body { color: var(--color-muted-light); }
 /* ---------- 16. CTA final ---------- */
 .cta-final {
   position: relative;
@@ -1187,6 +1090,14 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
 .gallery-modal.show .modal-nav,
 .gallery-modal.show .modal-close { display: flex; }
 .gallery-modal.show .modal-counter { display: inline-block; }
+
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2rem; align-items: stretch; }
+.testimonials-grid .testimonial-card-example { max-width: 100%; margin: 0; }
+@media (max-width: 991.98px) {
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 575.98px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
 }
 
 /* ---------- 24. Reduced motion ---------- */
