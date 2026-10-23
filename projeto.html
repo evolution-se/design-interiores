@@ -33,7 +33,7 @@
     <a href="#" class="btn-brand" data-whatsapp-message="Olá! Gostaria de solicitar um orçamento de projeto de arquitetura ou interiores.">Solicitar orçamento</a>
   </div>
 </header>
-<main id="conteudo" class="section" style="padding-top:calc(var(--header-h)+4rem);">
+<main id="conteudo" class="section">
   <div class="container-wide" id="projetoContainer">
     <p>Carregando projeto…</p>
   </div>
@@ -60,7 +60,7 @@
     var imgs = p.imagens.map(function(s){ return '<img src="'+s+'" alt="Imagem ilustrativa '+p.titulo+'" class="img-fade" style="width:100%;height:auto;margin-bottom:1.5rem;" loading="lazy">'; }).join('');
     var escopo = p.escopo.map(function(e){ return '<li>'+e+'</li>'; }).join('');
     container.innerHTML =
-      '<a href="index.html#portfolio" class="link-underline" style="margin-bottom:2rem;display:inline-flex;"><i class="bi bi-arrow-left"></i> Voltar ao portfólio</a>' +
+      '<a href="index.html#portfolio" class="link-underline" style="margin-bottom:2rem;display:inline-flex;position:relative;"><i class="bi bi-arrow-left"></i> Voltar ao portfólio</a>' +
       '<span class="eyebrow section-eyebrow">'+p.categoria+'</span>' +
       '<h1 style="margin-bottom:1rem;">'+p.titulo+'</h1>' +
       '<p class="meta" style="margin-bottom:2rem;">'+p.cidade+' · '+p.ano+'</p>' +

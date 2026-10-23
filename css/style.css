@@ -254,6 +254,8 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
 .site-header.is-transparent .logo-subtitle { color: var(--color-muted-light); }
 .site-header.is-transparent .nav-link { color: var(--color-text-light); }
 .site-header.is-transparent .nav-link:hover { color: var(--color-accent); }
+.page-inner .site-header { position: static; background: var(--color-bg); border-bottom-color: var(--color-gray-light); }
+.page-inner .section { padding-top: 3rem; }
 .site-header .container-wide { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
 
 .logo { display: flex; flex-direction: column; line-height: 1; }
