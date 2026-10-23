@@ -254,6 +254,10 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
 .site-header.is-transparent .logo-subtitle { color: var(--color-muted-light); }
 .site-header.is-transparent .nav-link { color: var(--color-text-light); }
 .site-header.is-transparent .nav-link:hover { color: var(--color-accent); }
+.site-header.is-transparent .nav-toggle { color: var(--color-text-light); }
+.site-header.menu-open { color: var(--color-primary); }
+.site-header.menu-open .logo-subtitle { color: var(--color-muted); }
+.site-header.menu-open .nav-toggle { color: var(--color-primary); }
 .page-inner .site-header { position: static; background: var(--color-bg); border-bottom-color: var(--color-gray-light); }
 .page-inner .section { padding-top: 3rem; }
 .site-header .container-wide { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
@@ -315,7 +319,7 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
   padding: 0;
 }
 .nav-toggle span {
-  display: block; width: 24px; height: 1px;
+  display: block; width: 24px; height: 2px;
   background: currentColor;
   transition: transform .3s var(--ease-soft), opacity .3s var(--ease-soft);
 }
@@ -493,7 +497,7 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
 .studio-founder .role { font-size: .8rem; color: var(--color-muted); letter-spacing: .05em; }
 @media (max-width: 991.98px) {
   .studio-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .studio-img-secondary { position: static; width: 60%; margin-top: 1.5rem; border: none; }
+  .studio-img-secondary { position: static; left: auto; bottom: auto; width: 70%; margin: 1.5rem auto 0; border: none; }
   .studio-pillars { flex-direction: column; gap: 1.5rem; }
 }
 /* ---------- 9. Portfólio ---------- */
@@ -792,6 +796,9 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
 .section--dark .faq-accordion .accordion-button { color: var(--color-text-light); }
 .section--dark .faq-accordion .accordion-button::after { color: var(--color-accent); }
 .section--dark .faq-accordion .accordion-body { color: var(--color-muted-light); }
+.faq-accordion .accordion-collapse { display: none; }
+.faq-accordion .accordion-collapse.show,
+.faq-accordion .accordion-collapse.collapsing { display: block; }
 /* ---------- 13. Equipe ---------- */
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
 .team-portrait {
@@ -1128,7 +1135,21 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
 .back-to-top.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
 
 /* ---------- 23. Modal galeria ---------- */
-.gallery-modal .modal-dialog { max-width: 90vw; }
+.gallery-modal {
+  position: fixed; inset: 0; z-index: 1055;
+  display: none !important;
+  align-items: center; justify-content: center;
+  background: rgba(0,0,0,.85);
+  overflow: hidden;
+  padding: 1rem;
+}
+.gallery-modal.show { display: flex !important; align-items: center; justify-content: center; }
+.gallery-modal .modal-dialog { transform: none !important; margin: auto; }
+.gallery-modal .modal-dialog {
+  margin: 0 auto; max-width: 90vw; width: auto;
+  display: flex; align-items: center; justify-content: center;
+}
+.gallery-modal .modal-content { width: auto; max-width: 90vw; }
 .gallery-modal .modal-content {
   background: var(--color-primary);
   border: none;
@@ -1159,6 +1180,13 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
   color: var(--color-muted-light);
   font-size: .78rem;
   letter-spacing: .18em;
+}
+.gallery-modal .modal-nav,
+.gallery-modal .modal-close,
+.gallery-modal .modal-counter { display: none; }
+.gallery-modal.show .modal-nav,
+.gallery-modal.show .modal-close { display: flex; }
+.gallery-modal.show .modal-counter { display: inline-block; }
 }
 
 /* ---------- 24. Reduced motion ---------- */

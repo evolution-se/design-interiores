@@ -45,22 +45,46 @@
     // ---------- Mobile menu ----------
     var toggle = document.querySelector('.nav-toggle');
     var mobileMenu = document.querySelector('.mobile-menu');
+    var header = document.querySelector('.site-header');
     if (toggle && mobileMenu) {
       toggle.addEventListener('click', function () {
         var open = mobileMenu.classList.toggle('is-open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         document.body.style.overflow = open ? 'hidden' : '';
+        if (header) header.classList.toggle('menu-open', open);
       });
       mobileMenu.querySelectorAll('a').forEach(function (a) {
         a.addEventListener('click', function () {
           mobileMenu.classList.remove('is-open');
           toggle.setAttribute('aria-expanded', 'false');
           document.body.style.overflow = '';
+          if (header) header.classList.remove('menu-open');
         });
       });
     }
 
     applyWhatsAppLinks();
+
+    // ---------- FAQ accordion ----------
+    document.querySelectorAll('.faq-accordion .accordion-button').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        var target = document.querySelector(btn.getAttribute('data-bs-target'));
+        if (!target) return;
+        var willOpen = !target.classList.contains('show');
+        // fecha os outros
+        document.querySelectorAll('.faq-accordion .accordion-collapse.show').forEach(function (c) {
+          if (c !== target) c.classList.remove('show');
+        });
+        document.querySelectorAll('.faq-accordion .accordion-button').forEach(function (b) {
+          if (b !== btn) { b.classList.add('collapsed'); b.setAttribute('aria-expanded', 'false'); }
+        });
+        target.classList.toggle('show', willOpen);
+        btn.classList.toggle('collapsed', !willOpen);
+        btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      });
+    });
 
     // ---------- Scroll suave para âncoras ----------
     document.querySelectorAll('a[href^="#"]').forEach(function (a) {
@@ -163,7 +187,8 @@
       if (e.key === 'ArrowLeft') show(idx - 1);
       if (e.key === 'ArrowRight') show(idx + 1);
     });
-    modalEl.addEventListener('shown.bs.modal', function () { modalEl.focus(); });
+    modalEl.addEventListener('shown.bs.modal', function () { document.body.style.overflow = 'hidden'; modalEl.focus(); });
+    modalEl.addEventListener('hidden.bs.modal', function () { document.body.style.overflow = ''; });
   });
 })();
 
