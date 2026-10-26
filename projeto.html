@@ -57,7 +57,7 @@
     var p = (window.PROJETOS || []).find(function(x){ return x.slug === slug; });
     if(!p){ container.innerHTML = '<p>Projeto não encontrado. <a href="index.html#portfolio">Voltar ao portfólio</a></p>'; return; }
     document.title = p.titulo + ' | Atelier Norte';
-    var imgs = p.imagens.map(function(s){ return '<img src="'+s+'" alt="Imagem ilustrativa '+p.titulo+'" class="img-fade" style="width:100%;height:auto;margin-bottom:1.5rem;" loading="lazy">'; }).join('');
+    var imgs = p.imagens.map(function(s){ return '<div class="img-placeholder" style="margin-bottom:1.5rem;"><img src="'+s+'" alt="Imagem ilustrativa '+p.titulo+'" class="img-fade" style="width:100%;height:auto;" loading="lazy"></div>'; }).join('');
     var escopo = p.escopo.map(function(e){ return '<li>'+e+'</li>'; }).join('');
     container.innerHTML =
       '<a href="index.html#portfolio" class="link-underline" style="margin-bottom:2rem;display:inline-flex;position:relative;"><i class="bi bi-arrow-left"></i> Voltar ao portfólio</a>' +

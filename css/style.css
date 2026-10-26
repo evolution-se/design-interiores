@@ -572,6 +572,7 @@ h4 { font-size: 1.2rem; line-height: 1.25; }
 .portfolio-card:hover .portfolio-card-media img { transform: scale(1.03); }
 .portfolio-card-overlay {
   position: absolute; inset: 0;
+  z-index: 2;
   background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,.5) 100%);
   opacity: 0;
   transition: opacity .4s var(--ease-soft);
