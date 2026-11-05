@@ -569,7 +569,7 @@
           <a href="https://www.instagram.com/" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
           <a href="https://www.pinterest.com/" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
           <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="https://www.whatsapp.com/" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://wa.me/5511999999999" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
         </div>
         <div class="contact-map-wrap" style="margin-top:2rem;">
           <iframe class="contact-map" src="https://www.google.com/maps?q=S%C3%A3o+Paulo&output=embed" title="Mapa São Paulo" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -580,14 +580,17 @@
         <div class="form-field">
           <label for="nome">Nome</label>
           <input type="text" id="nome" name="nome" required autocomplete="name">
+          <p class="field-error" id="nome-error" role="alert"></p>
         </div>
         <div class="form-field">
           <label for="telefone">Telefone / WhatsApp</label>
           <input type="tel" id="telefone" name="telefone" required autocomplete="tel" inputmode="tel">
+          <p class="field-error" id="telefone-error" role="alert"></p>
         </div>
         <div class="form-field">
           <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" autocomplete="email">
+          <input type="email" id="email" name="email" required autocomplete="email">
+          <p class="field-error" id="email-error" role="alert"></p>
         </div>
         <div class="form-field">
           <label for="tipo">Tipo de projeto</label>
@@ -598,6 +601,7 @@
             <option>Comercial</option>
             <option>Consultoria</option>
           </select>
+          <p class="field-error" id="tipo-error" role="alert"></p>
         </div>
         <div class="form-field">
           <label for="localizacao">Localização do imóvel</label>
@@ -620,6 +624,7 @@
         <div class="form-check">
           <input type="checkbox" id="consentimento" name="consentimento" required>
           <label for="consentimento">Li e concordo com a <a href="privacidade.html">política de privacidade</a>.</label>
+          <p class="field-error" id="consentimento-error" role="alert"></p>
         </div>
         <button type="submit" class="btn-brand">Enviar mensagem</button>
         <p class="form-note">Ao enviar, você será redirecionado ao WhatsApp com a mensagem preenchida.</p>

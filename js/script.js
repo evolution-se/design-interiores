@@ -211,26 +211,64 @@
       e.preventDefault();
       var nome = form.querySelector('[name="nome"]').value.trim();
       var tel = form.querySelector('[name="telefone"]').value.trim();
+      var email = form.querySelector('[name="email"]').value.trim();
       var tipo = form.querySelector('[name="tipo"]').value;
       var loc = form.querySelector('[name="localizacao"]').value.trim();
       var estagio = form.querySelector('[name="estagio"]').value;
       var msg = form.querySelector('[name="mensagem"]').value.trim();
       var consent = form.querySelector('[name="consentimento"]');
-      var errorBox = form.querySelector('.form-errors');
-      var errors = [];
-      if (!nome) errors.push('Informe seu nome.');
-      if (!tel) errors.push('Informe seu telefone.');
-      if (!tipo) errors.push('Selecione o tipo de projeto.');
-      if (consent && !consent.checked) errors.push('É necessário concordar com a política de privacidade.');
-      if (errorBox) {
-        errorBox.innerHTML = errors.map(function (x) { return '<p>' + x + '</p>'; }).join('');
-        errorBox.setAttribute('aria-live', 'polite');
-      }
-      form.querySelectorAll('input,select,textarea').forEach(function (f) {
-        f.setAttribute('aria-invalid', errors.length ? 'true' : 'false');
+      var nomeError = form.querySelector('#nome-error');
+      var telError = form.querySelector('#telefone-error');
+      var emailError = form.querySelector('#email-error');
+      var tipoError = form.querySelector('#tipo-error');
+      var consentError = form.querySelector('#consentimento-error');
+
+      [nomeError, telError, emailError, tipoError, consentError].forEach(function (el) {
+        if (el) { el.textContent = ''; el.classList.remove('visible'); }
       });
+
+      var errors = [];
+      if (!nome) {
+        errors.push('Informe seu nome.');
+        if (nomeError) { nomeError.textContent = 'Informe seu nome.'; nomeError.classList.add('visible'); }
+      }
+      if (!tel) {
+        errors.push('Informe seu telefone.');
+        if (telError) { telError.textContent = 'Informe seu telefone.'; telError.classList.add('visible'); }
+      }
+      if (!email) {
+        errors.push('Informe seu e-mail.');
+        if (emailError) { emailError.textContent = 'Informe seu e-mail.'; emailError.classList.add('visible'); }
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errors.push('Informe um e-mail válido.');
+        if (emailError) { emailError.textContent = 'Informe um e-mail válido.'; emailError.classList.add('visible'); }
+      }
+      if (!tipo) {
+        errors.push('Selecione o tipo de projeto.');
+        if (tipoError) { tipoError.textContent = 'Selecione o tipo de projeto.'; tipoError.classList.add('visible'); }
+      }
+      if (consent && !consent.checked) {
+        errors.push('É necessário concordar com a política de privacidade.');
+        if (consentError) { consentError.textContent = 'É necessário concordar com a política de privacidade.'; consentError.classList.add('visible'); }
+      }
+      var nomeField = form.querySelector('[name="nome"]');
+      var telField = form.querySelector('[name="telefone"]');
+      var emailField = form.querySelector('[name="email"]');
+      var tipoField = form.querySelector('[name="tipo"]');
+      var consentField = form.querySelector('[name="consentimento"]');
+
+      [nomeField, telField, emailField, tipoField, consentField].forEach(function (f) {
+        if (f) f.setAttribute('aria-invalid', 'false');
+      });
+
+      if (!nome && nomeField) nomeField.setAttribute('aria-invalid', 'true');
+      if (!tel && telField) telField.setAttribute('aria-invalid', 'true');
+      if ((!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) && emailField) emailField.setAttribute('aria-invalid', 'true');
+      if (!tipo && tipoField) tipoField.setAttribute('aria-invalid', 'true');
+      if (consent && !consent.checked && consentField) consentField.setAttribute('aria-invalid', 'true');
       if (errors.length) return;
       var text = 'Olá! Meu nome é ' + nome + '.\n' +
+        'E-mail: ' + email + '.\n' +
         'Tipo de projeto: ' + tipo + '.\n' +
         'Telefone: ' + tel + '.\n' +
         (loc ? 'Localização do imóvel: ' + loc + '.\n' : '') +
