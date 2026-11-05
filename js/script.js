@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const WHATSAPP_NUMBER = "5511900000000"; // SUBSTITUIR pelo número real
+  const WHATSAPP_NUMBER = "5511999999999"; // SUBSTITUIR pelo número real
 
   function buildWhatsAppUrl(message) {
     return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
